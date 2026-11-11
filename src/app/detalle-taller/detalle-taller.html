@@ -1,0 +1,25 @@
+@if (taller) {
+  <div class="card">
+    <div class="card-header">
+      <h3>{{ taller.nombre }}</h3>
+    </div>
+    <div class="card-body">
+      <p><strong>Identificador:</strong> {{ taller.id }}</p>
+      <p><strong>Nombre:</strong> {{ taller.nombre }}</p>
+      <p><strong>Categoría:</strong> {{ taller.categoria }}</p>
+      <p><strong>Duración:</strong> {{ taller.duracion }}</p>
+      <p><strong>Modalidad:</strong> {{ taller.modalidad }}</p>
+      <p><strong>Costo:</strong> $ {{ taller.costo }}</p>
+      <p><strong>Cupos disponibles:</strong> {{ taller.cupos }}</p>
+      <p><strong>Instructor:</strong> {{ taller.instructor }}</p>
+      <p><strong>Descripción:</strong> {{ taller.descripcion }}</p>
+    </div>
+  </div>
+  <a class="btn btn-success mt-3" [routerLink]="['/reserva', taller.id]">Reservar cupo</a>
+} @else {
+  <div class="alert alert-danger" role="alert">
+    Taller no encontrado. El taller que buscas no existe.
+  </div>
+}
+
+<a class="btn btn-secondary mt-3 ms-2" routerLink="/talleres">Volver a los talleres</a> 
